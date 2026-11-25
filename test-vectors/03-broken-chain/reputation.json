@@ -1,0 +1,86 @@
+{
+  "agent": {
+    "id": "https://example.org/agents/research-01",
+    "identifiers": [
+      "https://example.org/agents/research-01/card.json"
+    ],
+    "name": "Example Research Agent",
+    "public_key": "did:key:z6Mkpfx8muzdx5zzM8bHcz2X9NDajDycgmHMJfVsyMuTB8Bm"
+  },
+  "aggregates": {
+    "burst_receipts": 0,
+    "by_outcome": {
+      "CANCELLED": 0,
+      "COMPLETED": 1,
+      "COMPLETED_WITH_ISSUES": 1,
+      "FAILED": 0
+    },
+    "by_task_type": {
+      "research": {
+        "CANCELLED": 0,
+        "COMPLETED": 1,
+        "COMPLETED_WITH_ISSUES": 1,
+        "FAILED": 0
+      }
+    },
+    "clean_completion_rate": null,
+    "computed_at": "2026-11-19",
+    "counted": 2,
+    "counted_from_verified_clients": 1,
+    "counted_last_12_months": 2,
+    "delivery_rate": null,
+    "distinct_clients": 2,
+    "distinct_verified_clients": 1,
+    "first_receipt": "2026-11-02",
+    "last_receipt": "2026-11-10",
+    "max_receipts_per_client_day": 1,
+    "recent_clean_completion_rate": null,
+    "recent_delivery_rate": null,
+    "replaced": 0,
+    "revoked": 0,
+    "total": 2
+  },
+  "chain_head": "0cf83e38ec3e1bb2cbd1dfea3f0d281b14fc239d625b1bf46f70a738a4ae4ae3",
+  "checkpoints": [],
+  "history": [
+    {
+      "action": "RECEIPT_ADDED",
+      "date": "2026-11-02",
+      "note": "First test receipt included.",
+      "receipt_id": "9c8f1d11-ef52-4f07-af4f-9779fae39d20",
+      "signature": {
+        "algorithm": "Ed25519",
+        "public_key": "did:key:z6Mkpfx8muzdx5zzM8bHcz2X9NDajDycgmHMJfVsyMuTB8Bm",
+        "signature": "u-v98YHK50OF1T4eoZHaFCG0bfIf_pC-KTa-qLStAM9Q6CYyP6oKcAvXdEeqfQQ_X8yGfjOX8Ewpg5CUOXZZABw"
+      }
+    },
+    {
+      "action": "RECEIPT_ADDED",
+      "date": "2026-11-10",
+      "note": "Second test receipt included.",
+      "receipt_id": "6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f",
+      "signature": {
+        "algorithm": "Ed25519",
+        "public_key": "did:key:z6Mkpfx8muzdx5zzM8bHcz2X9NDajDycgmHMJfVsyMuTB8Bm",
+        "signature": "uDZxbvDUaTCa2onwmPMBPNxTzkOA5hQQqk5De4bB6B3Qu9wQ_1qmLggoTy45d6Dlq3H7bXoLvXOpt8cjrXRU3CQ"
+      }
+    }
+  ],
+  "id": "adcf8c84-f347-4349-bbf5-105a1f574d81",
+  "receipt_index": [
+    {
+      "file": "receipts/9c8f1d11-ef52-4f07-af4f-9779fae39d20.json",
+      "id": "9c8f1d11-ef52-4f07-af4f-9779fae39d20",
+      "inclusion_file": "chain/9c8f1d11-ef52-4f07-af4f-9779fae39d20.json",
+      "sha256": "3bcda213688e88bebbde8cd0af1143c1bc16fd0ca12539090663b25fafd37729"
+    },
+    {
+      "file": "receipts/6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f.json",
+      "id": "6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f",
+      "inclusion_file": "chain/6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f.json",
+      "sha256": "0cf83e38ec3e1bb2cbd1dfea3f0d281b14fc239d625b1bf46f70a738a4ae4ae3"
+    }
+  ],
+  "rotations": [],
+  "spec_version": "0.3"
+}

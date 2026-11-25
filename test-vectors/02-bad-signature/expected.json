@@ -1,0 +1,13 @@
+{
+  "case": "02-bad-signature",
+  "counted": 1,
+  "history": "UNANCHORED",
+  "issues": [
+    "receipt signature fails verification",
+    "receipt hash does not match inclusion record"
+  ],
+  "note": "Only receipt 2 counts after recomputation.",
+  "revoked": 0,
+  "total": 2,
+  "validity": "INVALID"
+}

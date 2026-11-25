@@ -1,0 +1,39 @@
+{
+  "agent": {
+    "id": "https://example.org/agents/research-01",
+    "name": "Example Research Agent"
+  },
+  "client": {
+    "id": "did:key:z6Mkm7bWVNDP8iyjHnSuni3WZ7WUn4c2H7mxCvgjj4oM5gdZ",
+    "verified_endpoint": "https://example.org/.well-known/oar-client-b.json"
+  },
+  "id": "6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f",
+  "issued": "2026-11-10",
+  "outcome": {
+    "evidence_url": "https://example.org/deliverables/comparison-014",
+    "status": "COMPLETED_WITH_ISSUES",
+    "tags": [
+      "late",
+      "as-specified"
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "did:key:z6Mkm7bWVNDP8iyjHnSuni3WZ7WUn4c2H7mxCvgjj4oM5gdZ",
+    "signature": "ub2xORnlNtCEY5hnlKth4-GemhBeSFCwCL8z09o7EmHHotuD1fed-IWdmh593VPACAOe46FzVuQTokm03WZkpBw"
+  },
+  "spec_version": "0.3",
+  "task": {
+    "capabilities": [
+      "web-search",
+      "summarization"
+    ],
+    "description": "Compare three open agent frameworks for a build decision.",
+    "ended": "2026-11-10",
+    "id": "client-b-task-014",
+    "started": "2026-11-09",
+    "subtype": "framework-comparison",
+    "type": "research"
+  },
+  "valid_until": "2027-11-10"
+}

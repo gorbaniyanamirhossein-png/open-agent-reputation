@@ -1,0 +1,14 @@
+{
+  "id": "3f42e0b2-a836-4365-904a-dcc6475b0e69",
+  "issued": "2026-11-03",
+  "position": 2,
+  "previous_receipt_hash": "0cf83e38ec3e1bb2cbd1dfea3f0d281b14fc239d625b1bf46f70a738a4ae4ae3",
+  "receipt_hash": "26e5cc5cc379c544afcbdb4c23df4a32846124108c833314d0aab590be14ac8e",
+  "receipt_id": "f9c8e506-82f6-462a-b54b-a27449c18a8a",
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "did:key:z6Mkpfx8muzdx5zzM8bHcz2X9NDajDycgmHMJfVsyMuTB8Bm",
+    "signature": "uqhQKnT3stKL88CBFet9OFrhhsblXkrNqrziB6U2gsxDgqMCFK0bnwu8X_n3nA4705_GQSb3UQS8U-5R21YGWAg"
+  },
+  "spec_version": "0.3"
+}

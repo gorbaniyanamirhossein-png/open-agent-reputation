@@ -1,0 +1,10 @@
+{
+  "case": "04-revoked",
+  "counted": 1,
+  "history": "UNANCHORED",
+  "issues": [],
+  "note": "The revoked receipt stays in the bundle but does not count.",
+  "revoked": 1,
+  "total": 2,
+  "validity": "VALID"
+}

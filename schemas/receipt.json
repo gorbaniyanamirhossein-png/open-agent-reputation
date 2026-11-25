@@ -1,0 +1,183 @@
+{
+  "$defs": {
+    "signature": {
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "pattern": "^u[A-Za-z0-9_-]{86}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key",
+        "signature"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/oar/schema/0.3/receipt.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "agent": {
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "type": "object"
+    },
+    "client": {
+      "properties": {
+        "id": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "verified_endpoint": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "issued": {
+      "format": "date",
+      "type": "string"
+    },
+    "outcome": {
+      "properties": {
+        "evidence_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "COMPLETED",
+            "COMPLETED_WITH_ISSUES",
+            "FAILED",
+            "CANCELLED"
+          ],
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "type": "object"
+    },
+    "payment_ref": {
+      "type": "string"
+    },
+    "replaces": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "spec_version": {
+      "const": "0.3",
+      "type": "string"
+    },
+    "task": {
+      "properties": {
+        "capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "maxLength": 280,
+          "minLength": 1,
+          "type": "string"
+        },
+        "ended": {
+          "format": "date",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "started": {
+          "format": "date",
+          "type": "string"
+        },
+        "subtype": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "research",
+            "coding",
+            "data-analysis",
+            "writing",
+            "customer-support",
+            "design",
+            "automation",
+            "other"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "capabilities",
+        "description",
+        "started",
+        "ended"
+      ],
+      "type": "object"
+    },
+    "valid_until": {
+      "format": "date",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "spec_version",
+    "agent",
+    "client",
+    "task",
+    "outcome",
+    "issued",
+    "signature"
+  ],
+  "title": "Open Agent Reputation \u2014 Receipt (v0.3)",
+  "type": "object"
+}

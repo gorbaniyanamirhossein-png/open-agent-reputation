@@ -1,0 +1,61 @@
+{
+  "$defs": {
+    "signature": {
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "pattern": "^u[A-Za-z0-9_-]{86}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key",
+        "signature"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/oar/schema/0.3/rotation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "date": {
+      "format": "date",
+      "type": "string"
+    },
+    "new_key": {
+      "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+      "type": "string"
+    },
+    "old_key": {
+      "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+      "type": "string"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "subject": {
+      "enum": [
+        "agent",
+        "client"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "subject",
+    "old_key",
+    "new_key",
+    "date",
+    "signature"
+  ],
+  "title": "Open Agent Reputation \u2014 Key Rotation (v0.3)",
+  "type": "object"
+}

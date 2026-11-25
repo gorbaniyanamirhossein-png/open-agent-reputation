@@ -1,0 +1,76 @@
+{
+  "$defs": {
+    "signature": {
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "pattern": "^u[A-Za-z0-9_-]{86}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key",
+        "signature"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/oar/schema/0.3/inclusion.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "id": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "issued": {
+      "format": "date",
+      "type": "string"
+    },
+    "position": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "previous_receipt_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receipt_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "receipt_id": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "spec_version": {
+      "const": "0.3",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "spec_version",
+    "receipt_id",
+    "receipt_hash",
+    "previous_receipt_hash",
+    "position",
+    "issued",
+    "signature"
+  ],
+  "title": "Open Agent Reputation \u2014 Chain Inclusion Record (v0.3)",
+  "type": "object"
+}

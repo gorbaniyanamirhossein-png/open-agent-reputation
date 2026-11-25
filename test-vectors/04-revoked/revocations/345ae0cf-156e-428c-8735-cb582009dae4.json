@@ -1,0 +1,13 @@
+{
+  "id": "345ae0cf-156e-428c-8735-cb582009dae4",
+  "issued": "2026-11-12",
+  "reason": "Wrong task id: this receipt describes client-b-task-015.",
+  "reason_code": "ISSUED_IN_ERROR",
+  "receipt_id": "6883545a-bf12-4b2d-ae73-a7a8b6d6eb8f",
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "did:key:z6Mkm7bWVNDP8iyjHnSuni3WZ7WUn4c2H7mxCvgjj4oM5gdZ",
+    "signature": "u1Fxspt3FhJ0RAI_yMPzLvBtVl7lyiWQkpuV-mykb19-8PqclqVrzctJAXRxfZqELvXxKXloPyhAqHxEDQ1aJDg"
+  },
+  "spec_version": "0.3"
+}

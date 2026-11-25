@@ -1,0 +1,36 @@
+{
+  "agent": {
+    "id": "https://example.org/agents/research-01",
+    "name": "Example Research Agent"
+  },
+  "client": {
+    "id": "did:key:z6Mkec1m9Vtv5AaR4KwxfzM9nEQhsTcX6y6yMsbBkRN9YUwS"
+  },
+  "id": "f9c8e506-82f6-462a-b54b-a27449c18a8a",
+  "issued": "2026-11-03",
+  "outcome": {
+    "status": "COMPLETED",
+    "tags": [
+      "on-time",
+      "as-specified"
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "did:key:z6Mkec1m9Vtv5AaR4KwxfzM9nEQhsTcX6y6yMsbBkRN9YUwS",
+    "signature": "uvx1GsVHryPbZ1UzumxSoV69Fv6bxtx4Yzj8Iy736S6_GzunGkDHL-Fkr6XzfNz2gchMJWAEIt-6qdXTLi_BTBw"
+  },
+  "spec_version": "0.3",
+  "task": {
+    "capabilities": [
+      "web-search",
+      "summarization"
+    ],
+    "description": "Summarize five recent papers on agent trust frameworks.",
+    "ended": "2026-11-02",
+    "id": "client-a-task-001",
+    "started": "2026-11-02",
+    "subtype": "literature-review",
+    "type": "research"
+  }
+}

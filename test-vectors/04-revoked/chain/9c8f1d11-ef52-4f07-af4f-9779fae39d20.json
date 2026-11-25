@@ -1,0 +1,14 @@
+{
+  "id": "3e3fe458-d24c-4f89-856d-a54eb1f0244b",
+  "issued": "2026-11-02",
+  "position": 0,
+  "previous_receipt_hash": null,
+  "receipt_hash": "3bcda213688e88bebbde8cd0af1143c1bc16fd0ca12539090663b25fafd37729",
+  "receipt_id": "9c8f1d11-ef52-4f07-af4f-9779fae39d20",
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "did:key:z6Mkpfx8muzdx5zzM8bHcz2X9NDajDycgmHMJfVsyMuTB8Bm",
+    "signature": "uOMLQk0V5KdStO3YetDBKBuwlcXoKmhG-jk2im4qGQu8rwyr5XbFsT5vxMvIQVon1-Hehek0QmYCVcJ_WVzMVBw"
+  },
+  "spec_version": "0.3"
+}

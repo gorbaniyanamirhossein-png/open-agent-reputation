@@ -1,0 +1,334 @@
+{
+  "$defs": {
+    "rotation": {
+      "properties": {
+        "date": {
+          "format": "date",
+          "type": "string"
+        },
+        "new_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "old_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        },
+        "subject": {
+          "enum": [
+            "agent",
+            "client"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "old_key",
+        "new_key",
+        "date",
+        "signature"
+      ],
+      "type": "object"
+    },
+    "signature": {
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "pattern": "^u[A-Za-z0-9_-]{86}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key",
+        "signature"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/oar/schema/0.3/reputation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "agent": {
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "identifiers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "public_key"
+      ],
+      "type": "object"
+    },
+    "aggregates": {
+      "properties": {
+        "burst_receipts": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "by_outcome": {
+          "type": "object"
+        },
+        "by_task_type": {
+          "type": "object"
+        },
+        "clean_completion_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "computed_at": {
+          "format": "date",
+          "type": "string"
+        },
+        "counted": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "counted_from_verified_clients": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "counted_last_12_months": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "delivery_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "distinct_clients": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "distinct_verified_clients": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "first_receipt": {
+          "format": "date",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_receipt": {
+          "format": "date",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_receipts_per_client_day": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "recent_clean_completion_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "recent_delivery_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "replaced": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "revoked": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "counted",
+        "revoked",
+        "replaced",
+        "distinct_clients",
+        "distinct_verified_clients",
+        "counted_from_verified_clients",
+        "burst_receipts",
+        "max_receipts_per_client_day",
+        "by_task_type",
+        "by_outcome",
+        "delivery_rate",
+        "clean_completion_rate",
+        "counted_last_12_months",
+        "recent_delivery_rate",
+        "recent_clean_completion_rate"
+      ],
+      "type": "object"
+    },
+    "chain_head": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "checkpoints": {
+      "items": {
+        "properties": {
+          "id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string"
+          },
+          "url": {
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "url"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "history": {
+      "items": {
+        "properties": {
+          "action": {
+            "enum": [
+              "RECEIPT_ADDED",
+              "RECEIPT_REVOKED",
+              "RESPONSE_ADDED",
+              "KEY_ROTATED",
+              "CORRECTION"
+            ],
+            "type": "string"
+          },
+          "date": {
+            "format": "date",
+            "type": "string"
+          },
+          "note": {
+            "maxLength": 280,
+            "type": "string"
+          },
+          "receipt_id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string"
+          },
+          "signature": {
+            "$ref": "#/$defs/signature"
+          }
+        },
+        "required": [
+          "date",
+          "action",
+          "note",
+          "signature"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "receipt_index": {
+      "items": {
+        "properties": {
+          "file": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string"
+          },
+          "inclusion_file": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "sha256",
+          "file",
+          "inclusion_file"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "rotations": {
+      "items": {
+        "$ref": "#/$defs/rotation"
+      },
+      "type": "array"
+    },
+    "spec_version": {
+      "const": "0.3",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "spec_version",
+    "agent",
+    "chain_head",
+    "receipt_index",
+    "checkpoints",
+    "aggregates",
+    "rotations",
+    "history"
+  ],
+  "title": "Open Agent Reputation \u2014 Reputation Record (v0.3)",
+  "type": "object"
+}

@@ -1,0 +1,73 @@
+{
+  "$defs": {
+    "signature": {
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^did:key:z[1-9A-HJ-NP-Za-km-z]{10,}$",
+          "type": "string"
+        },
+        "signature": {
+          "pattern": "^u[A-Za-z0-9_-]{86}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm",
+        "public_key",
+        "signature"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/oar/schema/0.3/checkpoint.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "agent_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "chain_head": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "date": {
+      "format": "date",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "type": "string"
+    },
+    "publisher": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "receipt_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "spec_version": {
+      "const": "0.3",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "spec_version",
+    "agent_id",
+    "chain_head",
+    "receipt_count",
+    "date",
+    "publisher",
+    "signature"
+  ],
+  "title": "Open Agent Reputation \u2014 Checkpoint (v0.3)",
+  "type": "object"
+}

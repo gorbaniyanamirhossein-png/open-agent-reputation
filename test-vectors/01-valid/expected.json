@@ -1,0 +1,10 @@
+{
+  "case": "01-valid",
+  "counted": 2,
+  "history": "UNANCHORED",
+  "issues": [],
+  "note": "No checkpoint is published for this bundle, so history is UNANCHORED even though validity is VALID.",
+  "revoked": 0,
+  "total": 2,
+  "validity": "VALID"
+}

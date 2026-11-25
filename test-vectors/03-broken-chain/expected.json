@@ -1,0 +1,12 @@
+{
+  "case": "03-broken-chain",
+  "counted": 1,
+  "history": "UNANCHORED",
+  "issues": [
+    "chain link mismatch at position 1"
+  ],
+  "note": "Only the receipt before the break counts; the chain cannot be recomputed past position 1.",
+  "revoked": 0,
+  "total": 2,
+  "validity": "INVALID"
+}

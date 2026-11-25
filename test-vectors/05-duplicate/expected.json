@@ -1,0 +1,10 @@
+{
+  "case": "05-duplicate",
+  "counted": 2,
+  "history": "UNANCHORED",
+  "issues": [],
+  "note": "The duplicate (same client, same task id) is validly signed and chained but does not count; the first receipt wins.",
+  "revoked": 0,
+  "total": 3,
+  "validity": "VALID"
+}
